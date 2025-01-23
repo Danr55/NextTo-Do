@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextTo-Do
 
-## Getting Started
+A simple and stylish To-Do List application built with React, Tailwind CSS, and LocalStorage. This app allows users to add tasks, assign importance levels (Urgent, Important, Not Important), and store tasks in the browser's LocalStorage so they persist across page reloads.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Add Tasks**: Enter a task and add it to your list.
+- **Importance Levels**: Assign tasks an importance level (Urgent, Important, Not Important).
+- **Task Removal**: Delete tasks from your list.
+- **Persistence**: Tasks are saved in LocalStorage, so they persist across page reloads.
+- **Styled with Tailwind CSS**: Beautiful, responsive UI using Tailwind CSS.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Demo
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+![NextTo-Do](./public/NextTo-Do.gif)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **React**: JavaScript library for building user interfaces.
+- **Tailwind CSS**: Utility-first CSS framework for fast styling.
+- **LocalStorage**: Web API for storing data on the user's browser.
 
-To learn more about Next.js, take a look at the following resources:
+## How To Use
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Add Task**: Type a task in the input field and select its importance level (Urgent, Important, or Not Important) using the dropdown.
+- **Delete Task**: Click the "Delete" button next to a task to remove it from the list.
+- **Persistence**: The tasks will remain stored in LocalStorage, so even if you refresh the page, your tasks will stay intact.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Oscar Rendon
+
+Code sourced with help ChatGPT
+
+- github Link:https://github.com/Danr55/NextTo-Do
+- Deployed Link:

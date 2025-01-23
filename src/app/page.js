@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
 import './globals.css';
@@ -8,23 +8,37 @@ import './globals.css';
 export default function Home() {
   const [tasks, setTasks] = useState([]);
 
+  // Load tasks from localStorage when the component mounts
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    setTasks(savedTasks);
+  }, []);
+
+  // Save tasks to localStorage whenever tasks change
+  useEffect(() => {
+    if (tasks.length > 0) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+  }, [tasks]);
+
+  // Add a new task
   const addTask = (newTask, importance) => {
-    setTasks((prevTasks) => [
-      ...prevTasks,
-      { task: newTask, importance: importance },
-    ]);
+    const newTaskObj = { task: newTask, importance, createdAt: new Date() };
+    setTasks((prevTasks) => [...prevTasks, newTaskObj]);
   };
 
+  // Update task importance
+  const updateImportance = (taskIndex, newImportance) => {
+    const updatedTasks = tasks.map((task, index) =>
+      index === taskIndex ? { ...task, importance: newImportance } : task
+    );
+    setTasks(updatedTasks);
+  };
+
+  // Remove a task
   const removeTask = (taskIndex) => {
-    setTasks((prevTasks) => prevTasks.filter((_, index) => index !== taskIndex));
-  };
-
-  const updateImportance = (index, newImportance) => {
-    setTasks((prevTasks) => {
-      const updatedTasks = [...prevTasks];
-      updatedTasks[index].importance = newImportance;
-      return updatedTasks;
-    });
+    const updatedTasks = tasks.filter((_, index) => index !== taskIndex);
+    setTasks(updatedTasks);
   };
 
   return (
